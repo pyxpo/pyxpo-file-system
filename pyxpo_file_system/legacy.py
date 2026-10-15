@@ -75,7 +75,7 @@ async def write_as_string_async(file_uri_: str, contents: str, options: Optional
 
 def _delete(uri: str, idempotent: bool) -> None:
     p = path_from_uri(uri)
-    if os.path.isdir(p):
+    if os.path.isdir(p) and not os.path.islink(p):
         shutil.rmtree(p)
     elif os.path.lexists(p):
         os.remove(p)
@@ -106,6 +106,8 @@ def _move(options: Dict[str, Any]) -> None:
 def _copy(options: Dict[str, Any]) -> None:
     src, dst = _from_to(options)
     if os.path.isdir(src):
+        if os.path.commonpath([os.path.realpath(src), os.path.realpath(dst)]) == os.path.realpath(src):
+            raise ValueError("cannot copy a folder onto itself or into itself")
         if os.path.exists(dst):
             shutil.rmtree(dst) if os.path.isdir(dst) else os.remove(dst)
         shutil.copytree(src, dst)

@@ -486,6 +486,8 @@ class Directory(_Entry):
         target = self._target(destination)
         if os.path.exists(target):
             raise FileExistsError("destination already exists: %s" % target)
+        if os.path.commonpath([os.path.realpath(target), os.path.realpath(self._path)]) == os.path.realpath(self._path):
+            raise ValueError("cannot copy a folder into itself")
         shutil.copytree(self._path, target)
 
     def move(self, destination: Union["Directory", str]) -> None:
