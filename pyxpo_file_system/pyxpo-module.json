@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "nativeContract": 1,
+  "name": "file-system",
+  "native": "FileSystem",
+  "ios": { "classes": ["FileSystemModule"] },
+  "android": {
+    "namespace": "dev.pyxpo.modules.filesystem",
+    "classes": ["dev.pyxpo.modules.filesystem.FileSystemModule"],
+    "dependencies": [],
+    "minSdk": 24
+  }
+}
