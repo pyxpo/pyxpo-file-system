@@ -3,7 +3,7 @@
 Files and folders in the app sandbox for pyxpo apps. The API follows expo-file-system (`File`,
 `Directory`, `Paths`), and the older function API is in `pyxpo_file_system.legacy`.
 
-This is an optional [pyxpo](https://github.com/ivishalchaubey/pyxpo) native module. Apps that do not
+This is an optional [pyxpo](https://github.com/pyxpo/pyxpo) native module. Apps that do not
 list it carry none of its code, permissions or dependencies.
 
 ## Install
