@@ -78,12 +78,18 @@ def _join(parts: tuple) -> str:
     return os.path.normpath(base)
 
 
+def _ios_container() -> bool:
+    """iOS, or the iOS shell built for Mac (Catalyst Python reports sys.platform "darwin"): HOME is laid out
+    like an iOS app container."""
+    return sys.platform == "ios" or os.environ.get("PYXPO_TARGET") == "ios"
+
+
 def _home() -> str:
     return os.environ.get("HOME") or os.path.expanduser("~")
 
 
 def _documents() -> str:
-    if sys.platform == "ios":
+    if _ios_container():
         return os.path.join(_home(), "Documents")
     if sys.platform == "android":
         return _home()  # the app's filesDir
@@ -91,7 +97,7 @@ def _documents() -> str:
 
 
 def _caches() -> str:
-    if sys.platform == "ios":
+    if _ios_container():
         return os.path.join(_home(), "Library", "Caches")
     if sys.platform == "android":
         return os.environ.get("TMPDIR") or os.path.join(os.path.dirname(_home()), "cache")
