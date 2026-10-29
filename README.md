@@ -1,5 +1,7 @@
 # pyxpo-file-system
 
+[![CI](https://github.com/pyxpo/pyxpo-file-system/actions/workflows/ci.yml/badge.svg)](https://github.com/pyxpo/pyxpo-file-system/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/pyxpo-file-system)](https://pypi.org/project/pyxpo-file-system/) [![Python](https://img.shields.io/pypi/pyversions/pyxpo-file-system)](https://pypi.org/project/pyxpo-file-system/) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Files and folders in the app's private sandbox, for [pyxpo](https://github.com/pyxpo/pyxpo) apps written in Python.
 The API follows [expo-file-system](https://docs.expo.dev/versions/latest/sdk/filesystem/) (SDK 54): `File`,
 `Directory` and `Paths`, plus the older function API in `pyxpo_file_system.legacy`. Reads and writes are plain Python
