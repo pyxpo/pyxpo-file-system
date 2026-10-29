@@ -7,7 +7,7 @@ file I/O. Only downloads go through native code (URLSession on iOS, HttpURLConne
 system certificates and proxy.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pyxpo/pyxpo/main/packages/file-system/docs/images/hero.png" width="820" alt="A note written, read back and listed from the app's documents folder on Android and iOS">
+  <img src="https://raw.githubusercontent.com/pyxpo/pyxpo-file-system/main/docs/images/hero.png" width="820" alt="A note written, read back and listed from the app's documents folder on Android and iOS">
 </p>
 
 ```python
@@ -102,7 +102,7 @@ def Notes():
 > blocks. A button that is `lambda: some_coroutine()` would never be awaited, so bump a counter and let `use_async` do the work.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pyxpo/pyxpo/main/packages/file-system/docs/images/notes.png" width="720" alt="File details: uri, exists, size, text, md5 and the folder listing">
+  <img src="https://raw.githubusercontent.com/pyxpo/pyxpo-file-system/main/docs/images/notes.png" width="720" alt="File details: uri, exists, size, text, md5 and the folder listing">
 </p>
 
 ## Folders
